@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Fathoni — Electrical Engineer · AI · IoT</title>
+  <meta name="description" content="Portfolio of Muhammad Fathoni: Electrical Engineering graduate building end-to-end products across hardware, IoT, machine learning, and mobile apps. Co-founder & engineer at Noora Deen Technology." />
+  <meta name="theme-color" content="#0a0b0f" />
+  <meta property="og:title" content="Muhammad Fathoni — Electrical Engineer · AI · IoT" />
+  <meta property="og:description" content="Hardware to AI, end to end. Explore my projects: SEMS, Noora, Saku, AromatheraWrist and more." />
+  <meta property="og:image" content="assets/img/portrait.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230a0b0f'/><path d='M36 8 16 36h14l-2 20 20-28H34z' fill='%23f5b942'/></svg>" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <span class="preloader-mark">MF</span>
+      <span class="preloader-line"><span></span></span>
+      <span class="preloader-text">loading portfolio</span>
+    </div>
+  </div>
+
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Home">
+        <span class="brand-mark"><svg viewBox="0 0 64 64" width="22" height="22" aria-hidden="true"><path d="M36 8 16 36h14l-2 20 20-28H34z" fill="currentColor"/></svg></span>
+        <span class="brand-name">Fathoni<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#achievements" data-i18n="nav.achievements">Awards</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="assets/CV_Muhammad_Fathoni.pdf" class="nav-cv-mobile" download data-i18n="nav.cv">Download CV</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" class="lang-btn active">EN</button>
+          <button type="button" data-lang="id" class="lang-btn">ID</button>
+        </div>
+        <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="assets/CV_Muhammad_Fathoni.pdf" class="btn btn-sm btn-primary nav-cv" download>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span data-i18n="nav.cv">Download CV</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-grid-lines"></div>
+        <span class="glow glow-a"></span>
+        <span class="glow glow-b"></span>
+        <svg class="hero-circuit" viewBox="0 0 800 600" fill="none" preserveAspectRatio="xMidYMid slice">
+          <path class="trace" d="M-20 120 H180 l40 40 H420 l30-30 H820" />
+          <path class="trace" d="M-20 480 H120 l30-30 H360 l40 40 H560 l30-30 H820" />
+          <path class="trace" d="M640 -20 V140 l-40 40 V420 l40 40 V620" />
+          <path class="trace" d="M120 -20 V80 l40 40 V300" />
+          <circle class="node" cx="180" cy="120" r="4"/><circle class="node" cx="420" cy="160" r="4"/>
+          <circle class="node" cx="360" cy="450" r="4"/><circle class="node" cx="600" cy="180" r="4"/>
+          <circle class="node" cx="160" cy="300" r="4"/><circle class="node" cx="590" cy="450" r="4"/>
+        </svg>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow mono reveal" data-i18n="hero.eyebrow">// Electrical Engineer · AI · IoT</p>
+          <h1 class="hero-name">
+            <span class="line"><span class="word" data-split>Muhammad</span></span>
+            <span class="line"><span class="word accent" data-split>Fathoni</span></span>
+          </h1>
+          <div class="hero-role reveal">
+            <span class="role-prefix" data-i18n="hero.rolePrefix">I build</span>
+            <span class="role-text" id="roleText">smart energy systems</span><span class="caret" aria-hidden="true"></span>
+          </div>
+          <p class="hero-desc reveal" data-i18n="hero.desc">
+            Electrical Engineering graduate from Universitas Islam Indonesia who builds products end to end,
+            from circuit boards and sensors to machine learning models and mobile apps. Currently co-founder
+            &amp; engineer at Noora Deen Technology, shipping Noora to Android and iOS.
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#projects" class="btn btn-primary btn-magnetic">
+              <span data-i18n="hero.ctaProjects">See my projects</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#contact" class="btn btn-ghost btn-magnetic" data-i18n="hero.ctaContact">Let's talk</a>
+          </div>
+          <div class="hero-socials reveal">
+            <a href="https://github.com/Toni2411" target="_blank" rel="noopener" aria-label="GitHub" class="social">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.34.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.68.41.35.78 1.05.78 2.12 0 1.54-.01 2.77-.01 3.15 0 .3.2.67.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-fathoni-038274266/" target="_blank" rel="noopener" aria-label="LinkedIn" class="social">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="mailto:fathonimuhammad2411@gmail.com" aria-label="Email" class="social">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="portrait-wrap">
+            <div class="portrait-ring" aria-hidden="true"></div>
+            <div class="portrait-frame">
+              <img src="assets/img/portrait.webp" alt="Muhammad Fathoni" width="742" height="1400" fetchpriority="high" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <span class="mono" data-i18n="hero.scroll">scroll</span>
+        <span class="scroll-line"></span>
+      </a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>ESP32</span><span>Python</span><span>JavaScript</span><span>Supabase</span><span>Capacitor</span><span>Random Forest</span><span>Google Gemini</span><span>Claude API</span><span>N8N</span><span>Firebase</span><span>React 19</span><span>TypeScript</span><span>PID Control</span><span>LabVIEW</span><span>VHDL / FPGA</span><span>Proteus</span><span>MQTT</span><span>PostgreSQL</span><span>Flask</span><span>PLC</span>
+        <span>ESP32</span><span>Python</span><span>JavaScript</span><span>Supabase</span><span>Capacitor</span><span>Random Forest</span><span>Google Gemini</span><span>Claude API</span><span>N8N</span><span>Firebase</span><span>React 19</span><span>TypeScript</span><span>PID Control</span><span>LabVIEW</span><span>VHDL / FPGA</span><span>Proteus</span><span>MQTT</span><span>PostgreSQL</span><span>Flask</span><span>PLC</span>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT (BENTO) ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow mono">01 — <span data-i18n="about.eyebrow">About</span></p>
+          <h2 class="section-title" data-i18n="about.title">Hardware roots, software reach.</h2>
+        </div>
+
+        <div class="bento">
+          <article class="bento-card bento-bio reveal">
+            <p class="bento-label mono" data-i18n="about.bioLabel">Who I am</p>
+            <p data-i18n="about.p1">I graduated in Electrical Engineering from Universitas Islam Indonesia in May 2026 with a GPA of 3.78, on a full scholarship from the UII Excellent Community. Somewhere along the way I realized I enjoy the software side as much as the hardware side, so instead of choosing one, I kept both.</p>
+            <p data-i18n="about.p2">That mix shows up in everything I build. My final project, SEMS, wires ESP32 sensors into a Random Forest model and a Gemini-powered assistant that helps households cut their electricity bill. At Noora Deen Technology I built and shipped Noora, a habit-building app for Muslims, owning everything from UI to backend to the Android and iOS release pipeline.</p>
+            <p data-i18n="about.p3">I'm most excited by work that sits between disciplines: applied AI, electric vehicles, robotics, and IoT. I learn fast, I like owning things end to end, and I do my best work when the problem is a little outside my comfort zone.</p>
+            <div class="bio-facts">
+              <div><span class="mono" data-i18n="about.f1">Based in</span><strong>Jakarta, Indonesia</strong></div>
+              <div><span class="mono" data-i18n="about.f2">Degree</span><strong data-i18n="about.f2v">B.Eng. Electrical Engineering</strong></div>
+              <div><span class="mono" data-i18n="about.f3">Status</span><strong data-i18n="about.f3v">Open to opportunities</strong></div>
+            </div>
+          </article>
+
+          <article class="bento-card bento-photo reveal" aria-label="Photo of Muhammad Fathoni">
+            <img src="assets/img/portrait-full.webp" alt="Muhammad Fathoni" loading="lazy" width="900" height="1350" />
+            <div class="bento-photo-cap">
+              <span class="mono">Muhammad Fathoni</span>
+              <span data-i18n="about.photoCap">Jakarta, Indonesia</span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-stat reveal">
+            <span class="stat-value"><span data-count="3.78" data-decimals="2">3.78</span></span>
+            <span class="stat-label" data-i18n="about.statGpa">GPA of 4.00</span>
+          </article>
+          <article class="bento-card bento-stat reveal">
+            <span class="stat-value"><span data-count="200">200</span>+</span>
+            <span class="stat-label" data-i18n="about.statStudents">Students mentored</span>
+          </article>
+          <article class="bento-card bento-stat reveal">
+            <span class="stat-value"><span data-count="9">9</span>+</span>
+            <span class="stat-label" data-i18n="about.statProjects">Projects built end to end</span>
+          </article>
+          <article class="bento-card bento-stat reveal">
+            <span class="stat-value"><span data-count="4">4</span></span>
+            <span class="stat-label" data-i18n="about.statAwards">National-level awards</span>
+          </article>
+
+          <article class="bento-card bento-now reveal">
+            <p class="bento-label mono"><span class="live-dot"></span> <span data-i18n="about.nowLabel">Currently</span></p>
+            <h3 data-i18n="about.nowTitle">Co-founder &amp; Engineer at Noora Deen Technology</h3>
+            <p data-i18n="about.nowDesc">Shipping Noora, a Muslim habit-building app, to Android and iOS as the sole engineer. Offline-first frontend, Supabase backend with realtime sync, and the full native release pipeline.</p>
+            <a href="https://nooradeen.com/" target="_blank" rel="noopener" class="link-arrow">nooradeen.com</a>
+          </article>
+
+          <article class="bento-card bento-edu reveal">
+            <p class="bento-label mono" data-i18n="about.eduLabel">Education</p>
+            <h3>Universitas Islam Indonesia</h3>
+            <p class="muted" data-i18n="about.eduDeg">B.Eng. Electrical Engineering · Faculty of Industrial Technology</p>
+            <p class="mono small">Aug 2022 – May 2026 · GPA 3.78 / 4.00</p>
+            <div class="chips small">
+              <span>Power Systems</span><span>Control Systems</span><span>PLC &amp; SCADA</span><span>Embedded Systems</span><span>Machine Learning</span><span>Digital Systems</span><span>Power Electronics</span><span>Renewable Energy</span>
+            </div>
+          </article>
+
+          <article class="bento-card bento-interests reveal">
+            <p class="bento-label mono" data-i18n="about.intLabel">Interests</p>
+            <ul class="interest-list">
+              <li><span>🤖</span><span data-i18n="about.int1">Applied AI &amp; LLM products</span></li>
+              <li><span>🚗</span><span data-i18n="about.int2">Electric vehicles</span></li>
+              <li><span>🦾</span><span data-i18n="about.int3">Robotics</span></li>
+              <li><span>📡</span><span data-i18n="about.int4">IoT &amp; smart energy</span></li>
+            </ul>
+          </article>
+
+          <article class="bento-card bento-lang reveal">
+            <p class="bento-label mono" data-i18n="about.langLabel">Languages</p>
+            <div class="lang-row"><span>Bahasa Indonesia</span><span class="mono muted" data-i18n="about.langNative">Native</span></div>
+            <div class="lang-row"><span>English</span><span class="mono muted" data-i18n="about.langEn">Professional</span></div>
+            <p class="bento-label mono mt" data-i18n="about.openLabel">Open to</p>
+            <p class="muted small" data-i18n="about.openTo">Engineering, AI/ML, and data roles · Jakarta / remote / relocation</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow mono">02 — <span data-i18n="skills.eyebrow">Skills</span></p>
+          <h2 class="section-title" data-i18n="skills.title">A full-stack toolkit, from copper to cloud.</h2>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4v1a3 3 0 0 1 3 3v1a3 3 0 0 1 0 6v1a3 3 0 0 1-3 3h-1a3 3 0 0 1-6 0H8a3 3 0 0 1-3-3v-1a3 3 0 0 1 0-6v-1a3 3 0 0 1 3-3V6a4 4 0 0 1 4-4z"/><path d="M12 2v20M8 8h8M8 16h8"/></svg>
+            </div>
+            <h3 data-i18n="skills.ai">AI &amp; Automation</h3>
+            <p class="muted small" data-i18n="skills.aiDesc">Language models doing real product work, plus the automation glue around them.</p>
+            <div class="chips">
+              <span>Claude API</span><span>Google Gemini</span><span>Prompt Engineering</span><span>N8N</span><span>scikit-learn</span><span>Random Forest</span><span>SVM</span><span>Pandas</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></svg>
+            </div>
+            <h3 data-i18n="skills.mobile">Frontend &amp; Mobile</h3>
+            <p class="muted small" data-i18n="skills.mobileDesc">Cross-platform apps with native packaging and release pipelines.</p>
+            <div class="chips">
+              <span>JavaScript</span><span>TypeScript</span><span>React 19</span><span>Capacitor 8</span><span>HTML &amp; CSS</span><span>Android Studio</span><span>iOS</span><span>Web APIs</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"/></svg>
+            </div>
+            <h3 data-i18n="skills.backend">Backend &amp; Cloud</h3>
+            <p class="muted small" data-i18n="skills.backendDesc">Auth, realtime sync, row-level security, and REST APIs that hold up in production.</p>
+            <div class="chips">
+              <span>Supabase</span><span>Firebase</span><span>PostgreSQL</span><span>REST API</span><span>Flask</span><span>Node.js</span><span>Express</span><span>Heroku</span><span>Cloudflare R2</span><span>Vercel</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+            </div>
+            <h3 data-i18n="skills.hardware">Electrical &amp; Embedded</h3>
+            <p class="muted small" data-i18n="skills.hardwareDesc">From wiring and troubleshooting to control loops, FPGA logic, and EV systems.</p>
+            <div class="chips">
+              <span>ESP32</span><span>Arduino</span><span>ATmega</span><span>PID Control</span><span>LabVIEW</span><span>VHDL / FPGA</span><span>Quartus</span><span>Proteus</span><span>PLC</span><span>MQTT</span><span>EV Wiring</span><span>SAIDI / SAIFI</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="langs-row reveal">
+          <p class="mono eyebrow" data-i18n="skills.langsLabel">Programming languages</p>
+          <div class="lang-pills">
+            <span data-level="90">Python</span>
+            <span data-level="92">JavaScript</span>
+            <span data-level="75">TypeScript</span>
+            <span data-level="80">C / C++</span>
+            <span data-level="78">SQL</span>
+            <span data-level="70">VHDL</span>
+            <span data-level="88">HTML / CSS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow mono">03 — <span data-i18n="projects.eyebrow">Projects</span></p>
+          <h2 class="section-title" data-i18n="projects.title">Things I've built, from prototype to product.</h2>
+          <p class="section-lead" data-i18n="projects.lead">Click any project to see photos, architecture, and the details behind it.</p>
+        </div>
+
+        <div class="filters reveal" id="projectFilters" role="tablist" aria-label="Filter projects">
+          <button class="filter-btn active" data-filter="all" data-i18n="projects.fAll">All</button>
+          <button class="filter-btn" data-filter="ai" data-i18n="projects.fAi">AI &amp; Software</button>
+          <button class="filter-btn" data-filter="iot" data-i18n="projects.fIot">IoT &amp; Embedded</button>
+          <button class="filter-btn" data-filter="ee" data-i18n="projects.fEe">Electrical &amp; Simulation</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow mono">04 — <span data-i18n="exp.eyebrow">Experience</span></p>
+          <h2 class="section-title" data-i18n="exp.title">Where I've worked and taught.</h2>
+        </div>
+
+        <div class="exp-layout">
+          <div class="timeline">
+            <article class="tl-item reveal">
+              <div class="tl-marker"><span></span></div>
+              <div class="tl-card">
+                <div class="tl-top">
+                  <span class="tl-date mono" data-i18n="exp.nooraDate">May 2026 — Present</span>
+                  <span class="tag tag-accent" data-i18n="exp.nooraType">Part-time</span>
+                </div>
+                <h3 data-i18n="exp.nooraRole">Full Stack / AI Engineer · Co-founder</h3>
+                <p class="tl-org">Noora Deen Technology</p>
+                <ul>
+                  <li data-i18n="exp.noora1">Develop Noora, a cross-platform Islamic lifestyle app: location-based prayer times, the full 30-juz Quran with Kemenag translation and per-ayah audio, daily hadith, digital tasbih, Hijri-based sunnah fasting reminders, and a streak system.</li>
+                  <li data-i18n="exp.noora2">Own the entire technical stack: offline-first vanilla JS frontend, Supabase backend (auth, Postgres, realtime, row-level security), and the native packaging and release pipeline for Android and iOS.</li>
+                </ul>
+                <div class="chips small"><span>Capacitor 8</span><span>Supabase</span><span>JavaScript</span><span>Claude</span></div>
+              </div>
+            </article>
+
+            <article class="tl-item reveal">
+              <div class="tl-marker"><span></span></div>
+              <div class="tl-card">
+                <div class="tl-top">
+                  <span class="tl-date mono">Sep 2025 — Oct 2025</span>
+                  <span class="tag" data-i18n="exp.plnType">Internship</span>
+                </div>
+                <h3 data-i18n="exp.plnRole">Engineering Intern · Technical Division</h3>
+                <p class="tl-org">PT PLN (Persero) ULP Pasir Pengaraian · Riau</p>
+                <ul>
+                  <li data-i18n="exp.pln1">Analyzed customer outage data through the APKT system and evaluated distribution reliability using SAIDI and SAIFI indices.</li>
+                  <li data-i18n="exp.pln2">Documented service interruption cases, compiled reliability reports for performance reviews, and worked with field technicians on outage resolution.</li>
+                </ul>
+                <div class="chips small"><span>APKT</span><span>SAIDI / SAIFI</span><span>Power Distribution</span></div>
+              </div>
+            </article>
+
+            <article class="tl-item reveal">
+              <div class="tl-marker"><span></span></div>
+              <div class="tl-card">
+                <div class="tl-top">
+                  <span class="tl-date mono">Feb 2024 — Jan 2026</span>
+                  <span class="tag" data-i18n="exp.labType">Teaching</span>
+                </div>
+                <h3 data-i18n="exp.labRole">Laboratory Assistant</h3>
+                <p class="tl-org" data-i18n="exp.labOrg">Department of Electrical Engineering, Universitas Islam Indonesia</p>
+                <ul>
+                  <li data-i18n="exp.lab1">Ran practical sessions across four subjects: Electric Circuit II, Digital Systems (VHDL on Quartus with FPGA), Control Systems (PID on LabVIEW with air heater and DC motor rigs), and Telecommunication Systems.</li>
+                  <li data-i18n="exp.lab2">Mentored 200+ undergraduate students, prepared lab modules, evaluated reports, and helped students work through tough engineering concepts.</li>
+                </ul>
+                <div class="chips small"><span>VHDL / FPGA</span><span>PID · LabVIEW</span><span>Circuit Analysis</span><span>Signal Processing</span></div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="exp-side">
+            <figure class="exp-photo reveal">
+              <img src="assets/img/lab-session.webp" alt="Lab session with undergraduate students" loading="lazy" width="950" height="720" />
+              <figcaption class="mono" data-i18n="exp.photoCap">Lab session — undergraduate practical at UII</figcaption>
+            </figure>
+
+            <div class="org-block reveal">
+              <p class="eyebrow mono" data-i18n="exp.orgLabel">Leadership &amp; organizations</p>
+              <ul class="org-list">
+                <li>
+                  <strong>IEEE Student Branch UII</strong>
+                  <span data-i18n="exp.org1">Director of Academies · Jun 2024 – May 2026</span>
+                  <small class="muted" data-i18n="exp.org1b">Academies Staff (2023–24) · IEEE Global Member (2024)</small>
+                </li>
+                <li>
+                  <strong>UASC Electric Vehicle</strong>
+                  <span data-i18n="exp.org2">Head of Programming / Electrical Engineer · Jul 2023 – Mar 2025</span>
+                  <small class="muted" data-i18n="exp.org2b">Vehicle control programming, EV wiring, Proteus simulation</small>
+                </li>
+                <li>
+                  <strong>Unisi Robotic UII</strong>
+                  <span data-i18n="exp.org3">Electrical Division Staff · May 2024 – May 2026</span>
+                  <small class="muted" data-i18n="exp.org3b">Wiring systems and electrical troubleshooting for robots</small>
+                </li>
+                <li>
+                  <strong>UII Excellent Community</strong>
+                  <span data-i18n="exp.org4">Full Scholarship Awardee · 2022 – 2026</span>
+                </li>
+                <li>
+                  <strong>ELITE — Electrical Link Togetherness</strong>
+                  <span data-i18n="exp.org5">Master of Ceremony · Events Department</span>
+                </li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section class="section" id="achievements">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow mono">05 — <span data-i18n="ach.eyebrow">Achievements</span></p>
+          <h2 class="section-title" data-i18n="ach.title">Awards, grants &amp; certifications.</h2>
+          <a href="https://www.linkedin.com/in/muhammad-fathoni-038274266/recent-activity/all/" target="_blank" rel="noopener" class="btn btn-ghost btn-sm ach-linkedin">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z"/></svg>
+            <span data-i18n="ach.linkedin">See photos &amp; posts on LinkedIn</span>
+          </a>
+        </div>
+
+        <div class="ach-layout">
+          <div class="ach-grid">
+            <article class="ach-card gold reveal">
+              <span class="ach-rank">1st</span>
+              <div>
+                <h3 data-i18n="ach.a1">IT Centrum Startup Hackathon 2024</h3>
+                <p class="muted" data-i18n="ach.a1s">Universitas Islam Indonesia · Dec 13–14, 2024</p>
+              </div>
+            </article>
+            <article class="ach-card gold reveal">
+              <span class="ach-rank">1st</span>
+              <div>
+                <h3 data-i18n="ach.a2">Business Idea Competition</h3>
+                <p class="muted" data-i18n="ach.a2s">Student Entrepreneur Day 2024</p>
+              </div>
+            </article>
+            <article class="ach-card bronze reveal">
+              <span class="ach-rank">3rd</span>
+              <div>
+                <h3 data-i18n="ach.a3">PKM IC — Community Service Scheme</h3>
+                <p class="muted" data-i18n="ach.a3s">Ministry of Education · 2025</p>
+              </div>
+            </article>
+            <article class="ach-card reveal">
+              <span class="ach-rank">4th</span>
+              <div>
+                <h3 data-i18n="ach.a4">PKM IC — Karsa Cipta Scheme</h3>
+                <p class="muted" data-i18n="ach.a4s">Ministry of Education · 2024 · AromatheraWrist</p>
+              </div>
+            </article>
+            <article class="ach-card reveal">
+              <span class="ach-rank">5th</span>
+              <div>
+                <h3 data-i18n="ach.a5">PKM IC — Innovative Work Scheme</h3>
+                <p class="muted" data-i18n="ach.a5s">Ministry of Education · 2025</p>
+              </div>
+            </article>
+            <article class="ach-card star reveal">
+              <span class="ach-rank">★</span>
+              <div>
+                <h3 data-i18n="ach.a6">PKM Karsa Cipta Research Funding</h3>
+                <p class="muted" data-i18n="ach.a6s">Ministry of Education · 2024</p>
+              </div>
+            </article>
+            <article class="ach-card star reveal">
+              <span class="ach-rank">★</span>
+              <div>
+                <h3 data-i18n="ach.a7">UII Excellent Community Full Scholarship</h3>
+                <p class="muted" data-i18n="ach.a7s">Universitas Islam Indonesia · 2022 – 2026</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="cert-block reveal">
+            <p class="eyebrow mono" data-i18n="ach.certLabel">Certifications &amp; training</p>
+            <ul class="cert-list">
+              <li><span>HCIA-Datacom V1.0</span><small>Huawei Talent Online · Dec 2023</small></li>
+              <li><span data-i18n="ach.c2">Basic PLC Training</span><small>Dept. of Electrical Engineering UII · Dec 2024</small></li>
+              <li><span data-i18n="ach.c3">Python for Data Science</span><small>Dept. of Electrical Engineering UII · Nov 2024 &amp; May 2025</small></li>
+              <li><span data-i18n="ach.c4">Leadership Training UII EC 2022</span><small>UII Student Affairs Directorate · Jun 2024</small></li>
+              <li><span data-i18n="ach.c5">Personal Development Basic Training</span><small>UII Student Affairs Directorate · Jun 2023</small></li>
+              <li><span data-i18n="ach.c6">IEEE Leadership Class 2022</span><small>IEEE Student Branch UII · Nov–Dec 2022</small></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="contact-glow" aria-hidden="true"></div>
+          <p class="eyebrow mono">06 — <span data-i18n="contact.eyebrow">Contact</span></p>
+          <h2 class="contact-title" data-i18n="contact.title">Let's build something<br />that actually ships.</h2>
+          <p class="contact-lead" data-i18n="contact.lead">I'm open to engineering, AI/ML, and data roles, and always happy to talk about interesting projects. My inbox is open and I usually reply fast.</p>
+
+          <div class="contact-actions">
+            <a href="mailto:fathonimuhammad2411@gmail.com" class="btn btn-primary btn-lg btn-magnetic">
+              <span data-i18n="contact.cta">Send me an email</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <button class="btn btn-ghost btn-lg" id="copyEmail" type="button">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <span data-i18n="contact.copy">Copy email</span>
+            </button>
+          </div>
+
+          <div class="contact-grid">
+            <a class="contact-item" href="https://wa.me/6282258503481" target="_blank" rel="noopener">
+              <span class="mono">WhatsApp</span><strong>+62 822-5850-3481</strong>
+            </a>
+            <a class="contact-item" href="https://www.linkedin.com/in/muhammad-fathoni-038274266/" target="_blank" rel="noopener">
+              <span class="mono">LinkedIn</span><strong>muhammad-fathoni</strong>
+            </a>
+            <a class="contact-item" href="https://github.com/Toni2411" target="_blank" rel="noopener">
+              <span class="mono">GitHub</span><strong>Toni2411</strong>
+            </a>
+            <div class="contact-item">
+              <span class="mono" data-i18n="contact.loc">Location</span><strong>Jakarta, Indonesia</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="brand">
+        <span class="brand-mark"><svg viewBox="0 0 64 64" width="20" height="20" aria-hidden="true"><path d="M36 8 16 36h14l-2 20 20-28H34z" fill="currentColor"/></svg></span>
+        <span class="brand-name">Fathoni<span class="brand-dot">.</span></span>
+      </a>
+      <p class="muted small" data-i18n="footer.text">Designed &amp; built by Muhammad Fathoni with vanilla HTML, CSS and JavaScript. No framework needed.</p>
+      <p class="mono small">© 2026 Muhammad Fathoni</p>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <!-- PROJECT MODAL -->
+  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-panel">
+      <button class="modal-close icon-btn" data-close aria-label="Close">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal-gallery">
+        <div class="gallery-main">
+          <img id="galleryImg" src="" alt="" />
+          <button class="gallery-nav prev" id="galleryPrev" aria-label="Previous image"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+          <button class="gallery-nav next" id="galleryNext" aria-label="Next image"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+          <p class="gallery-cap mono" id="galleryCap"></p>
+        </div>
+        <div class="gallery-thumbs" id="galleryThumbs"></div>
+      </div>
+      <div class="modal-body">
+        <p class="mono eyebrow" id="modalMeta"></p>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-role muted" id="modalRole"></p>
+        <p id="modalDesc"></p>
+        <p class="mono eyebrow" data-i18n="modal.highlights">Key highlights</p>
+        <ul class="modal-highlights" id="modalHighlights"></ul>
+        <div class="chips small" id="modalStack"></div>
+        <div class="modal-links" id="modalLinks"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
