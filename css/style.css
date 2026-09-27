@@ -540,3 +540,7 @@ a.contact-item:hover { border-color: var(--accent); transform: translateY(-2px);
   .hero-name .char { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Certification links */
+.cert-list a { color: inherit; text-decoration: none; border-bottom: 1px solid rgba(var(--accent-rgb), 0.45); }
+.cert-list a:hover { color: var(--accent); }

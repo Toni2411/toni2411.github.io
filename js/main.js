@@ -6,8 +6,49 @@
 /* ---------- Project data ---------- */
 const PROJECTS = [
   {
+    id: "siaga",
+    title: "SIAGA: Predictive Maintenance ERP for Mining",
+    short: "SIAGA",
+    cat: "ai",
+    year: "2026",
+    featured: true,
+    badge: { en: "Industrial AI · Sole developer", id: "AI industri · Pengembang tunggal" },
+    role: { en: "Sole Developer: architecture, ML, ERP integration, IoT pipeline", id: "Pengembang Tunggal: arsitektur, ML, integrasi ERP, pipeline IoT" },
+    desc: {
+      en: "Condition based maintenance for mining equipment, built on ERPNext. Vibration data flows over MQTT into TimescaleDB, and an anomaly model scores every machine against its own healthy baseline. When the health score stays low, SIAGA raises a work order with the suspected parts, reserves the stock and drafts a purchase request. The only human step is approval. On a real bearing failure dataset from NASA it flagged the problem about 25 hours before the machine stopped.",
+      id: "Sistem perawatan berbasis kondisi untuk alat tambang, dibangun di atas ERPNext. Data getaran mengalir lewat MQTT ke TimescaleDB, lalu model anomali menilai setiap mesin terhadap kondisi sehatnya sendiri. Saat skor kesehatan terus rendah, SIAGA menerbitkan work order lengkap dengan part yang dicurigai, mengunci stok, dan membuat draft permintaan pembelian. Manusia cukup menyetujui. Pada data kerusakan bearing asli dari NASA, sistem memberi peringatan sekitar 25 jam sebelum mesin berhenti."
+    },
+    highlights: {
+      en: [
+        "Warned about 25 hours before a real bearing failure (NASA IMS data), and 80 and 128 hours ahead on a second dataset it had never seen",
+        "Per unit Isolation Forest models with a robust z distance, each scored against that unit's own healthy baseline",
+        "Work order, part reservation and draft purchase request raised automatically, with parts ordered early from the projected health trend",
+        "Telegram bot for mechanics with Start and Finish buttons, plus a read only LLM assistant on local Ollama for planner questions",
+        "Runs end to end with one docker compose command; repair notes feed a detection lead time report"
+      ],
+      id: [
+        "Memberi peringatan sekitar 25 jam sebelum kerusakan bearing asli (data NASA IMS), serta 80 dan 128 jam lebih awal pada dataset kedua yang belum pernah dilihat",
+        "Model Isolation Forest per unit dengan jarak z robust, tiap unit dinilai terhadap kondisi sehatnya sendiri",
+        "Work order, reservasi part, dan draft pembelian terbit otomatis, dan part bisa dipesan lebih awal dari proyeksi tren kesehatan",
+        "Bot Telegram untuk mekanik dengan tombol Mulai dan Selesai, plus asisten LLM baca saja di Ollama lokal untuk pertanyaan planner",
+        "Berjalan penuh dengan satu perintah docker compose; catatan perbaikan diolah menjadi laporan lead time deteksi"
+      ]
+    },
+    stack: ["ERPNext", "Isolation Forest", "TimescaleDB", "MQTT", "Python", "Docker", "Ollama", "Telegram Bot"],
+    cover: "siaga-card",
+    coverFit: "",
+    gallery: [
+      ["siaga-flow", { en: "How SIAGA turns vibration data into a purchase request", id: "Cara SIAGA mengubah data getaran menjadi permintaan pembelian" }],
+      ["siaga-trend", { en: "Health score of a pump dropping over several days", id: "Skor kesehatan pompa turun selama beberapa hari" }],
+      ["siaga-wo", { en: "Work order raised automatically once the score crosses the threshold", id: "Work order terbit otomatis saat skor melewati ambang" }],
+      ["siaga-pr", { en: "Purchase request drafted before the alarm, with the reason written out", id: "Draft pembelian dibuat sebelum alarm, lengkap dengan alasannya" }],
+      ["siaga-telegram", { en: "Mechanics start and close work orders from Telegram", id: "Mekanik memulai dan menutup work order dari Telegram" }]
+    ],
+    links: [{ label: "GitHub", url: "https://github.com/Toni2411/siaga" }]
+  },
+  {
     id: "sems",
-    title: "SEMS — Smart Energy Management System",
+    title: "SEMS: Smart Energy Management System",
     short: "SEMS",
     cat: "iot",
     year: "2025 – 2026",
@@ -45,12 +86,50 @@ const PROJECTS = [
     links: []
   },
   {
+    id: "hermes",
+    title: "Autonomous AI Video Studio",
+    short: "AI Video Studio",
+    cat: "ai",
+    year: "2026",
+    badge: { en: "Multi agent system · Sole developer", id: "Sistem multi agent · Pengembang tunggal" },
+    role: { en: "Sole Developer: architecture, agents, prompts, video pipeline, integrations", id: "Pengembang Tunggal: arsitektur, agent, prompt, pipeline video, integrasi" },
+    desc: {
+      en: "A team of AI agents that writes, films, checks, uploads and learns from an animated YouTube series, controlled from Telegram. I wanted a channel that runs itself without turning into low quality AI spam, so every agent owns one job and the others check its work.",
+      id: "Tim agent AI yang menulis, membuat video, memeriksa, mengunggah, dan belajar dari serial animasi YouTube, dikendalikan lewat Telegram. Saya ingin kanal yang berjalan sendiri tanpa menjadi konten AI asal jadi, jadi setiap agent memegang satu tugas dan diperiksa oleh agent lain."
+    },
+    highlights: {
+      en: [
+        "Writer agent keeps story continuity between episodes; a supervisor agent scores each script against a rubric and sends it back for revision",
+        "36 AI shots per episode with one consistent character, then a QC agent rejects black frames, unwanted speech and any title the footage does not support",
+        "Packager builds the title, thumbnail and a vertical Short; the uploader publishes privately through the YouTube Data API for owner review",
+        "Analyst pulls day 1, 3 and 7 metrics and writes lessons into a shared memory that every agent reads next time",
+        "Every step reported to Telegram, with a hard monthly API budget that falls back to free models"
+      ],
+      id: [
+        "Agent penulis menjaga kesinambungan cerita antar episode; agent supervisor menilai naskah dengan rubrik lalu mengembalikannya untuk direvisi",
+        "36 shot AI per episode dengan satu karakter yang konsisten, lalu agent QC menolak frame hitam, suara yang tidak diinginkan, dan judul yang tidak didukung isi video",
+        "Packager membuat judul, thumbnail, dan Short vertikal; uploader mengunggah secara privat lewat YouTube Data API untuk ditinjau pemilik",
+        "Agent analis menarik metrik hari 1, 3, dan 7 lalu menulis pelajaran ke memori bersama yang dibaca semua agent berikutnya",
+        "Setiap langkah dilaporkan ke Telegram, dengan batas anggaran API bulanan yang otomatis beralih ke model gratis"
+      ]
+    },
+    stack: ["Claude API", "Python", "AI Agents", "YouTube API", "ffmpeg", "Telegram Bot", "SQLite"],
+    cover: "hermes-cover",
+    coverFit: "",
+    gallery: [
+      ["hermes-cover", { en: "Episode thumbnail made by the packager agent", id: "Thumbnail episode buatan agent packager" }],
+      ["hermes-pipeline", { en: "Agent pipeline from script to analytics", id: "Pipeline agent dari naskah sampai analitik" }],
+      ["hermes-shots", { en: "36 generated shots with one consistent character", id: "36 shot hasil generate dengan satu karakter konsisten" }],
+      ["hermes-banner", { en: "Channel banner", id: "Banner kanal" }]
+    ],
+    links: [{ label: "YouTube", url: "https://www.youtube.com/channel/UCYnr0p9XG2e4qIAWotdrdxQ" }]
+  },
+  {
     id: "noora",
-    title: "Noora — Muslim Habit-Building App",
+    title: "Noora: Muslim Habit Building App",
     short: "Noora",
     cat: "ai",
     year: "2026",
-    featured: true,
     badge: { en: "Flagship product · Co-founder", id: "Produk utama · Co-founder" },
     role: { en: "Co-Founder & Sole Engineer — Mobile, Backend, UI · Noora Deen Technology", id: "Co-Founder & Engineer Tunggal — Mobile, Backend, UI · Noora Deen Technology" },
     desc: {
@@ -81,8 +160,44 @@ const PROJECTS = [
     links: [{ label: "nooradeen.com", url: "https://nooradeen.com/" }]
   },
   {
+    id: "guard",
+    title: "Guardrailed LLM Content: RAG Chatbot and n8n Generator",
+    short: "Guardrailed LLM Content",
+    cat: "ai",
+    year: "2026",
+    badge: { en: "LLM reliability · Sole developer", id: "Keandalan LLM · Pengembang tunggal" },
+    role: { en: "Sole Developer: prompts, workflow, retrieval pipeline, evaluation", id: "Pengembang Tunggal: prompt, workflow, pipeline retrieval, evaluasi" },
+    desc: {
+      en: "Three AI systems built around one question: what stops the model from confidently saying something false? A marketing post whose prompt forbids any figure the model cannot source, a weekly social media generator built as an n8n workflow, and a RAG chatbot written from scratch that answers in the voice of a public figure from an indexed archive of his speeches.",
+      id: "Tiga sistem AI yang dibangun di sekitar satu pertanyaan: apa yang mencegah model mengatakan hal keliru dengan penuh yakin? Sebuah post pemasaran dengan prompt yang melarang angka tanpa sumber, generator konten media sosial mingguan berbentuk workflow n8n, dan chatbot RAG yang ditulis dari nol untuk menjawab dengan gaya seorang tokoh publik berdasarkan arsip pidatonya."
+    },
+    highlights: {
+      en: [
+        "21 node n8n workflow with a deterministic regex gate behind the brand voice prompt; anything it catches goes to human review instead of being published",
+        "RAG pipeline built by hand: chunking, embeddings, retrieval, LLM reranking and a cap per source document",
+        "A similarity floor stops the pipeline before generation when nothing relevant is retrieved, and the floor is calibrated from measured data",
+        "Faithfulness 1.00 across 15 evaluation cases, with no invented quotations or dates",
+        "The same pattern each time: state the rule in the prompt, then enforce it in code the model cannot talk its way around"
+      ],
+      id: [
+        "Workflow n8n 21 node dengan gerbang regex deterministik di belakang prompt gaya brand; yang tertangkap masuk ke review manusia, bukan langsung terbit",
+        "Pipeline RAG dibuat manual: chunking, embedding, retrieval, rerank oleh LLM, dan batas potongan per dokumen",
+        "Ambang kemiripan menghentikan pipeline sebelum menjawab jika tidak ada dokumen yang relevan, dan ambangnya dikalibrasi dari data terukur",
+        "Faithfulness 1,00 pada 15 kasus evaluasi, tanpa kutipan atau tanggal karangan",
+        "Polanya selalu sama: tulis aturannya di prompt, lalu tegakkan lewat kode yang tidak bisa dibujuk oleh model"
+      ]
+    },
+    stack: ["Python", "RAG", "Google Gemini", "n8n", "Embeddings", "Gradio"],
+    cover: "guard-card",
+    coverFit: "contain",
+    gallery: [
+      ["guard-flow", { en: "Guardrails across the three systems", id: "Guardrail pada ketiga sistem" }]
+    ],
+    links: []
+  },
+  {
     id: "saku",
-    title: "Saku — AI-Powered Personal Finance Manager",
+    title: "Saku: AI Personal Finance Manager",
     short: "Saku",
     cat: "ai",
     year: "2026",
@@ -118,8 +233,111 @@ const PROJECTS = [
     links: []
   },
   {
+    id: "wwpanel",
+    title: "Wastewater Treatment Control Panel",
+    short: "Wastewater Control Panel",
+    cat: "iot",
+    year: "2026",
+    badge: { en: "Control panel · Team project", id: "Panel kontrol · Proyek tim" },
+    role: { en: "Control panel firmware and monitoring dashboard (team project)", id: "Firmware panel kontrol dan dashboard pemantauan (proyek tim)" },
+    desc: {
+      en: "An ESP32 control panel that runs a small wastewater treatment unit on its own, in automatic 120 L batches, together with a web dashboard that lets operators watch it live. The panel sequences the pumps, reads water level and pH, catches faults and reminds the operator when the filter needs a backwash.",
+      id: "Panel kontrol ESP32 yang menjalankan unit pengolahan air limbah kecil secara mandiri dalam batch otomatis 120 L, lengkap dengan dashboard web untuk memantaunya secara langsung. Panel mengatur urutan pompa, membaca level air dan pH, menangkap gangguan, dan mengingatkan operator saat filter perlu dicuci balik."
+    },
+    highlights: {
+      en: [
+        "State machine firmware for fill, dose, react and treat stages, switching four pumps and a UV lamp through relays, with key switches and a buzzer for alerts",
+        "Ultrasonic level sensing and pH monitoring, with fault handling and counters kept in non volatile memory",
+        "Realtime dashboard on Firebase with live status, history charts, CSV export and an event log",
+        "Logic validated in a Wokwi simulation against a written test procedure before touching the hardware"
+      ],
+      id: [
+        "Firmware state machine untuk tahap isi, dosing, reaksi, dan olah, mengendalikan empat pompa dan lampu UV lewat relay, dengan sakelar kunci dan buzzer peringatan",
+        "Sensor level ultrasonik dan pemantauan pH, dengan penanganan gangguan dan penghitung yang disimpan di memori non volatil",
+        "Dashboard realtime di Firebase dengan status langsung, grafik historis, ekspor CSV, dan riwayat kejadian",
+        "Logika diuji di simulasi Wokwi berdasarkan prosedur uji tertulis sebelum dipasang ke perangkat"
+      ]
+    },
+    stack: ["ESP32", "C++", "State Machine", "Firebase", "Chart.js", "Wokwi"],
+    cover: "wwpanel-dash",
+    coverFit: "top",
+    gallery: [
+      ["wwpanel-dash", { en: "Monitoring dashboard, realtime view", id: "Dashboard pemantauan, tampilan realtime" }],
+      ["wwpanel-pfd", { en: "Process the panel controls", id: "Proses yang dikendalikan panel" }]
+    ],
+    links: []
+  },
+  {
+    id: "mosha",
+    title: "Mosha AirQ: Smoke Detection for Schools",
+    short: "Mosha AirQ",
+    cat: "iot",
+    year: "2026",
+    badge: { en: "Community service · IoT", id: "Pengabdian masyarakat · IoT" },
+    role: { en: "Developer: device, firmware, dashboard, data analysis", id: "Pengembang: perangkat, firmware, dashboard, analisis data" },
+    desc: {
+      en: "A low cost IoT air monitor that helps a senior high school enforce its smoke free policy. An ESP32 with an MQ-135 gas sensor classifies indoor air as safe, warning or smoking detected and reports it in real time, so teachers get an objective early warning instead of relying on patrols.",
+      id: "Monitor kualitas udara IoT berbiaya rendah yang membantu sebuah SMA menegakkan kebijakan kawasan tanpa rokok. ESP32 dengan sensor gas MQ-135 mengklasifikasikan udara ruangan menjadi aman, waspada, atau terdeteksi merokok secara real time, sehingga guru mendapat peringatan dini yang objektif tanpa harus berpatroli."
+    },
+    highlights: {
+      en: [
+        "Controlled test with 30 readings per condition: average gas concentration rose from 561 PPM in clean air to 1703 PPM during smoking",
+        "The two ranges never overlapped, which set a detection threshold of 1500 PPM",
+        "Rule based classifier running on the device, with a realtime web dashboard",
+        "Written up as a journal article draft"
+      ],
+      id: [
+        "Uji terkendali dengan 30 data per kondisi: rata rata konsentrasi gas naik dari 561 PPM di udara bersih menjadi 1703 PPM saat merokok",
+        "Kedua rentang tidak pernah beririsan, sehingga ambang deteksi ditetapkan 1500 PPM",
+        "Klasifikasi berbasis aturan berjalan di perangkat, dengan dashboard web realtime",
+        "Ditulis sebagai draf artikel jurnal"
+      ]
+    },
+    stack: ["ESP32", "MQ-135", "Firebase", "JavaScript", "Python"],
+    cover: "mosha-card",
+    coverFit: "contain",
+    gallery: [
+      ["mosha-results", { en: "Clean air vs smoking, 30 readings each", id: "Udara bersih vs merokok, masing masing 30 data" }]
+    ],
+    links: []
+  },
+  {
+    id: "webhook",
+    title: "Webhook Delivery Service",
+    short: "Webhook Delivery Service",
+    cat: "ai",
+    year: "2026",
+    badge: { en: "Backend engineering", id: "Rekayasa backend" },
+    role: { en: "Sole Developer", id: "Pengembang Tunggal" },
+    desc: {
+      en: "A backend service that takes events from internal producers and reliably delivers them to HTTP endpoints registered by customers. It is built for the unhappy path: slow customers, endpoints that go down, and events that arrive twice.",
+      id: "Layanan backend yang menerima event dari produsen internal lalu mengirimkannya secara andal ke endpoint HTTP milik pelanggan. Dirancang untuk kondisi buruk: pelanggan yang lambat, endpoint yang mati, dan event yang terkirim dua kali."
+    },
+    highlights: {
+      en: [
+        "An event is acknowledged only after it is durably stored, and idempotency keys stop duplicates",
+        "Each customer gets its own queue, so one slow endpoint never blocks the others",
+        "Retries with configurable backoff, a full attempt log, a status API and replay for failed events",
+        "Covered by a pytest suite and a demo running healthy, flaky and down customers side by side"
+      ],
+      id: [
+        "Event baru dikonfirmasi setelah tersimpan dengan aman, dan idempotency key mencegah duplikasi",
+        "Setiap pelanggan punya antrean sendiri, sehingga satu endpoint lambat tidak menghambat yang lain",
+        "Retry dengan backoff yang bisa diatur, log setiap percobaan, API status, dan replay untuk event yang gagal",
+        "Diuji dengan pytest dan demo yang menjalankan pelanggan sehat, tidak stabil, dan mati secara bersamaan"
+      ]
+    },
+    stack: ["Python", "FastAPI", "httpx", "SQLite", "pytest"],
+    cover: "webhook-card",
+    coverFit: "contain",
+    gallery: [
+      ["webhook-flow", { en: "Delivery guarantees, step by step", id: "Jaminan pengiriman, langkah demi langkah" }]
+    ],
+    links: []
+  },
+  {
     id: "ndweb",
-    title: "Noora Deen Technology — Company Website",
+    title: "Noora Deen Technology: Company Website",
     short: "Noora Deen Website",
     cat: "ai",
     year: "2026",
@@ -155,7 +373,7 @@ const PROJECTS = [
   },
   {
     id: "aroma",
-    title: "AromatheraWrist — Smart Bracelet for Anxiety Relief",
+    title: "AromatheraWrist: Smart Bracelet for Anxiety Relief",
     short: "AromatheraWrist",
     cat: "iot",
     year: "2024",
@@ -327,24 +545,24 @@ const PROJECTS = [
 const T = {
   en: {
     "nav.about": "About", "nav.skills": "Skills", "nav.projects": "Projects", "nav.experience": "Experience", "nav.achievements": "Awards", "nav.contact": "Contact", "nav.cv": "Download CV",
-    "hero.eyebrow": "// Electrical Engineer · AI · IoT",
+    "hero.eyebrow": "// Electrical Engineer · AI & IoT for Industry",
     "hero.rolePrefix": "I build",
-    "hero.desc": "Electrical Engineering graduate from Universitas Islam Indonesia who builds products end to end, from circuit boards and sensors to machine learning models and mobile apps. Currently co-founder & engineer at Noora Deen Technology, shipping Noora to Android and iOS.",
+    "hero.desc": "Electrical Engineer and master's student at Universitas Islam Indonesia. I build AI and IoT systems for industry, from the sensor on the machine to the model and software that act on its data. My latest project, SIAGA, predicts equipment failures for mining and turns them into work orders on its own.",
     "hero.ctaProjects": "See my projects", "hero.ctaContact": "Let's talk",
     "hero.scroll": "scroll",
     "about.eyebrow": "About", "about.title": "Hardware roots, software reach.", "about.bioLabel": "Who I am",
-    "about.p1": "I graduated in Electrical Engineering from Universitas Islam Indonesia in May 2026 with a GPA of 3.78, on a full scholarship from the UII Excellent Community. Somewhere along the way I realized I enjoy the software side as much as the hardware side, so instead of choosing one, I kept both.",
-    "about.p2": "That mix shows up in everything I build. My final project, SEMS, wires ESP32 sensors into a Random Forest model and a Gemini-powered assistant that helps households cut their electricity bill. At Noora Deen Technology I built and shipped Noora, a habit-building app for Muslims, owning everything from UI to backend to the Android and iOS release pipeline.",
-    "about.p3": "I'm most excited by work that sits between disciplines: applied AI, electric vehicles, robotics, and IoT. I learn fast, I like owning things end to end, and I do my best work when the problem is a little outside my comfort zone.",
-    "about.photoCap": "Jakarta, Indonesia", "about.f1": "Based in", "about.f2": "Degree", "about.f2v": "B.Eng. Electrical Engineering", "about.f3": "Status", "about.f3v": "Open to opportunities",
+    "about.p1": "I graduated in Electrical Engineering from Universitas Islam Indonesia in May 2026 with a GPA of 3.78, on a full scholarship from the UII Excellent Community, and I am now continuing with a Master of Electrical Engineering at the same university. Somewhere along the way I realized I enjoy the software side as much as the hardware side, so instead of choosing one, I kept both.",
+    "about.p2": "That mix shows up in everything I build. SIAGA reads vibration data from mining equipment and raises work orders before a machine fails. SEMS, my final project, wires ESP32 sensors into a Random Forest model and a Gemini assistant that helps households cut their electricity bill. At Noora Deen Technology I built and shipped Noora to Android and iOS as the sole engineer.",
+    "about.p3": "Right now I am most drawn to AI and IoT for heavy industry, especially mining and energy: predictive maintenance, language models that can read field notes, and systems that people on site can actually trust. I learn fast, I like owning things end to end, and I do my best work when the problem is a little outside my comfort zone.",
+    "about.photoCap": "Yogyakarta, Indonesia", "about.f1": "Based in", "about.f2": "Degree", "about.f2v": "B.Eng. EE · M.Eng. in progress", "about.f3": "Status", "about.f3v": "Open to opportunities",
     "about.statGpa": "GPA of 4.00", "about.statStudents": "Students mentored", "about.statProjects": "Projects built end to end", "about.statAwards": "National-level awards",
-    "about.nowLabel": "Currently", "about.nowTitle": "Co-founder & Engineer at Noora Deen Technology",
-    "about.nowDesc": "Shipping Noora, a Muslim habit-building app, to Android and iOS as the sole engineer. Offline-first frontend, Supabase backend with realtime sync, and the full native release pipeline.",
+    "about.nowLabel": "Currently", "about.nowTitle": "Master's student, Electrical Engineering at UII",
+    "about.nowDesc": "Exploring how language models can read maintenance notes from mining equipment, while building SIAGA and shipping Noora as co-founder of Noora Deen Technology.",
     "about.eduLabel": "Education", "about.eduDeg": "B.Eng. Electrical Engineering · Faculty of Industrial Technology",
-    "about.intLabel": "Interests", "about.int1": "Applied AI & LLM products", "about.int2": "Electric vehicles", "about.int3": "Robotics", "about.int4": "IoT & smart energy",
-    "about.langLabel": "Languages", "about.langNative": "Native", "about.langEn": "Professional", "about.openLabel": "Open to", "about.openTo": "Engineering, AI/ML, and data roles · Jakarta / remote / relocation",
+    "about.intLabel": "Interests", "about.int1": "Applied AI & LLM products", "about.int2": "AI for mining & heavy industry", "about.int3": "IoT & smart energy", "about.int4": "Electric vehicles & robotics",
+    "about.langLabel": "Languages", "about.langNative": "Native", "about.langEn": "Professional", "about.openLabel": "Open to", "about.openTo": "Engineering, AI/ML and industrial AI roles · Yogyakarta / remote / relocation",
     "skills.eyebrow": "Skills", "skills.title": "A full-stack toolkit, from copper to cloud.",
-    "skills.ai": "AI & Automation", "skills.aiDesc": "Language models doing real product work, plus the automation glue around them.",
+    "skills.ai": "AI & Automation", "skills.aiDesc": "Language models, agents and anomaly detection doing real work, plus the guardrails and automation around them.",
     "skills.mobile": "Frontend & Mobile", "skills.mobileDesc": "Cross-platform apps with native packaging and release pipelines.",
     "skills.backend": "Backend & Cloud", "skills.backendDesc": "Auth, realtime sync, row-level security, and REST APIs that hold up in production.",
     "skills.hardware": "Electrical & Embedded", "skills.hardwareDesc": "From wiring and troubleshooting to control loops, FPGA logic, and EV systems.",
@@ -376,32 +594,32 @@ const T = {
     "ach.a7": "UII Excellent Community Full Scholarship", "ach.a7s": "Universitas Islam Indonesia · 2022 – 2026",
     "ach.linkedin": "See photos & posts on LinkedIn", "ach.certLabel": "Certifications & training", "ach.c2": "Basic PLC Training", "ach.c3": "Python for Data Science", "ach.c4": "Leadership Training UII EC 2022", "ach.c5": "Personal Development Basic Training", "ach.c6": "IEEE Leadership Class 2022",
     "contact.eyebrow": "Contact", "contact.title": "Let's build something<br>that actually ships.",
-    "contact.lead": "I'm open to engineering, AI/ML, and data roles, and always happy to talk about interesting projects. My inbox is open and I usually reply fast.",
+    "contact.lead": "I'm open to engineering, AI/ML and industrial AI roles, especially in mining and energy, and always happy to talk about interesting projects. My inbox is open and I usually reply fast.",
     "contact.cta": "Send me an email", "contact.copy": "Copy email", "contact.copied": "Email copied to clipboard", "contact.loc": "Location",
     "modal.highlights": "Key highlights",
     "footer.text": "Designed & built by Muhammad Fathoni with vanilla HTML, CSS and JavaScript. No framework needed.",
-    roles: ["smart energy systems", "mobile apps for Android & iOS", "AI-powered products", "IoT & embedded devices", "control systems", "things end to end"]
+    roles: ["predictive maintenance for mining", "AI agents that check their own work", "smart energy systems", "IoT & industrial control panels", "mobile apps for Android & iOS", "things end to end"]
   },
   id: {
     "nav.about": "Tentang", "nav.skills": "Keahlian", "nav.projects": "Proyek", "nav.experience": "Pengalaman", "nav.achievements": "Prestasi", "nav.contact": "Kontak", "nav.cv": "Unduh CV",
-    "hero.eyebrow": "// Insinyur Elektro · AI · IoT",
+    "hero.eyebrow": "// Insinyur Elektro · AI & IoT untuk Industri",
     "hero.rolePrefix": "Saya membangun",
-    "hero.desc": "Lulusan Teknik Elektro Universitas Islam Indonesia yang membangun produk secara end to end, dari papan sirkuit dan sensor hingga model machine learning dan aplikasi mobile. Saat ini co-founder & engineer di Noora Deen Technology, merilis Noora ke Android dan iOS.",
+    "hero.desc": "Insinyur Elektro dan mahasiswa magister di Universitas Islam Indonesia. Saya membangun sistem AI dan IoT untuk industri, dari sensor di mesin sampai model dan perangkat lunak yang mengolah datanya. Proyek terbaru saya, SIAGA, memprediksi kerusakan alat tambang lalu mengubahnya menjadi work order secara otomatis.",
     "hero.ctaProjects": "Lihat proyek saya", "hero.ctaContact": "Mari bicara",
     "hero.scroll": "gulir",
     "about.eyebrow": "Tentang", "about.title": "Berakar di hardware, menjangkau software.", "about.bioLabel": "Siapa saya",
-    "about.p1": "Saya lulus dari Teknik Elektro Universitas Islam Indonesia pada Mei 2026 dengan IPK 3,78, melalui beasiswa penuh UII Excellent Community. Di tengah perjalanan saya sadar bahwa saya menikmati sisi software sama besarnya dengan hardware, jadi alih-alih memilih satu, saya menekuni keduanya.",
-    "about.p2": "Perpaduan itu terlihat di semua yang saya bangun. Tugas akhir saya, SEMS, menghubungkan sensor ESP32 ke model Random Forest dan asisten berbasis Gemini yang membantu rumah tangga menghemat tagihan listrik. Di Noora Deen Technology saya membangun dan merilis Noora, aplikasi pembentuk kebiasaan untuk Muslim, mengerjakan semuanya dari UI, backend, hingga pipeline rilis Android dan iOS.",
-    "about.p3": "Saya paling antusias dengan pekerjaan yang berada di antara disiplin: AI terapan, kendaraan listrik, robotika, dan IoT. Saya belajar cepat, suka memegang tanggung jawab penuh, dan bekerja paling baik saat masalahnya sedikit di luar zona nyaman.",
-    "about.photoCap": "Jakarta, Indonesia", "about.f1": "Berdomisili di", "about.f2": "Gelar", "about.f2v": "S.T. Teknik Elektro", "about.f3": "Status", "about.f3v": "Terbuka untuk peluang",
+    "about.p1": "Saya lulus dari Teknik Elektro Universitas Islam Indonesia pada Mei 2026 dengan IPK 3,78 melalui beasiswa penuh UII Excellent Community, dan kini melanjutkan Magister Teknik Elektro di kampus yang sama. Di tengah perjalanan saya sadar bahwa saya menikmati sisi software sama besarnya dengan hardware, jadi daripada memilih satu, saya menekuni keduanya.",
+    "about.p2": "Perpaduan itu terlihat di semua yang saya bangun. SIAGA membaca data getaran alat tambang dan menerbitkan work order sebelum mesin rusak. SEMS, tugas akhir saya, menghubungkan sensor ESP32 ke model Random Forest dan asisten Gemini yang membantu rumah tangga menghemat tagihan listrik. Di Noora Deen Technology saya membangun dan merilis Noora ke Android dan iOS sebagai engineer tunggal.",
+    "about.p3": "Saat ini saya paling tertarik pada AI dan IoT untuk industri berat, terutama tambang dan energi: perawatan prediktif, model bahasa yang bisa membaca catatan lapangan, dan sistem yang benar benar bisa dipercaya orang di site. Saya belajar cepat, suka memegang tanggung jawab penuh, dan bekerja paling baik saat masalahnya sedikit di luar zona nyaman.",
+    "about.photoCap": "Yogyakarta, Indonesia", "about.f1": "Berdomisili di", "about.f2": "Gelar", "about.f2v": "S.T. Teknik Elektro · S2 berjalan", "about.f3": "Status", "about.f3v": "Terbuka untuk peluang",
     "about.statGpa": "IPK dari 4,00", "about.statStudents": "Mahasiswa dibimbing", "about.statProjects": "Proyek dibangun end to end", "about.statAwards": "Penghargaan tingkat nasional",
-    "about.nowLabel": "Saat ini", "about.nowTitle": "Co-founder & Engineer di Noora Deen Technology",
-    "about.nowDesc": "Merilis Noora, aplikasi pembentuk kebiasaan untuk Muslim, ke Android dan iOS sebagai engineer tunggal. Frontend offline-first, backend Supabase dengan sinkronisasi realtime, dan pipeline rilis native lengkap.",
+    "about.nowLabel": "Saat ini", "about.nowTitle": "Mahasiswa Magister Teknik Elektro UII",
+    "about.nowDesc": "Mendalami bagaimana model bahasa bisa membaca catatan perawatan alat tambang, sambil membangun SIAGA dan merilis Noora sebagai co-founder Noora Deen Technology.",
     "about.eduLabel": "Pendidikan", "about.eduDeg": "S1 Teknik Elektro · Fakultas Teknologi Industri",
-    "about.intLabel": "Minat", "about.int1": "AI terapan & produk LLM", "about.int2": "Kendaraan listrik", "about.int3": "Robotika", "about.int4": "IoT & energi pintar",
-    "about.langLabel": "Bahasa", "about.langNative": "Native", "about.langEn": "Profesional", "about.openLabel": "Terbuka untuk", "about.openTo": "Posisi engineering, AI/ML, dan data · Jakarta / remote / relokasi",
+    "about.intLabel": "Minat", "about.int1": "AI terapan & produk LLM", "about.int2": "AI untuk tambang & industri berat", "about.int3": "IoT & energi pintar", "about.int4": "Kendaraan listrik & robotika",
+    "about.langLabel": "Bahasa", "about.langNative": "Native", "about.langEn": "Profesional", "about.openLabel": "Terbuka untuk", "about.openTo": "Posisi engineering, AI/ML, dan AI industri · Yogyakarta / remote / relokasi",
     "skills.eyebrow": "Keahlian", "skills.title": "Toolkit full-stack, dari tembaga hingga cloud.",
-    "skills.ai": "AI & Otomasi", "skills.aiDesc": "Model bahasa yang mengerjakan tugas produk nyata, plus otomasi di sekitarnya.",
+    "skills.ai": "AI & Otomasi", "skills.aiDesc": "Model bahasa, agent, dan deteksi anomali yang mengerjakan tugas nyata, plus guardrail dan otomasi di sekitarnya.",
     "skills.mobile": "Frontend & Mobile", "skills.mobileDesc": "Aplikasi lintas platform dengan packaging native dan pipeline rilis.",
     "skills.backend": "Backend & Cloud", "skills.backendDesc": "Auth, sinkronisasi realtime, row-level security, dan REST API yang andal di produksi.",
     "skills.hardware": "Elektrikal & Embedded", "skills.hardwareDesc": "Dari pengkabelan dan troubleshooting hingga control loop, logika FPGA, dan sistem EV.",
@@ -433,11 +651,11 @@ const T = {
     "ach.a7": "Beasiswa Penuh UII Excellent Community", "ach.a7s": "Universitas Islam Indonesia · 2022 – 2026",
     "ach.linkedin": "Lihat foto & postingan di LinkedIn", "ach.certLabel": "Sertifikasi & pelatihan", "ach.c2": "Pelatihan Dasar PLC", "ach.c3": "Python untuk Data Science", "ach.c4": "Leadership Training UII EC 2022", "ach.c5": "Pelatihan Dasar Pengembangan Diri", "ach.c6": "IEEE Leadership Class 2022",
     "contact.eyebrow": "Kontak", "contact.title": "Mari bangun sesuatu<br>yang benar-benar dirilis.",
-    "contact.lead": "Saya terbuka untuk posisi engineering, AI/ML, dan data, dan selalu senang berdiskusi tentang proyek menarik. Inbox saya terbuka dan biasanya saya membalas cepat.",
+    "contact.lead": "Saya terbuka untuk posisi engineering, AI/ML, dan AI industri, terutama di tambang dan energi, dan selalu senang berdiskusi tentang proyek menarik. Inbox saya terbuka dan biasanya saya membalas cepat.",
     "contact.cta": "Kirim email", "contact.copy": "Salin email", "contact.copied": "Email disalin ke clipboard", "contact.loc": "Lokasi",
     "modal.highlights": "Sorotan utama",
     "footer.text": "Didesain & dibangun oleh Muhammad Fathoni dengan vanilla HTML, CSS dan JavaScript. Tanpa framework.",
-    roles: ["sistem energi pintar", "aplikasi Android & iOS", "produk berbasis AI", "perangkat IoT & embedded", "sistem kendali", "produk secara end to end"]
+    roles: ["perawatan prediktif untuk tambang", "agent AI yang memeriksa kerjanya sendiri", "sistem energi pintar", "IoT & panel kontrol industri", "aplikasi Android & iOS", "produk secara end to end"]
   }
 };
 
