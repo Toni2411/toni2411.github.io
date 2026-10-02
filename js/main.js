@@ -290,20 +290,24 @@ const PROJECTS = [
       en: [
         "Controlled test with 30 readings per condition: average gas concentration rose from 561 PPM in clean air to 1703 PPM during smoking",
         "The two ranges never overlapped, which set a detection threshold of 1500 PPM",
-        "Rule based classifier running on the device, with a realtime web dashboard",
+        "Rule based classifier running on the device, with a realtime web dashboard and Telegram alerts to teachers",
         "Written up as a journal article draft"
       ],
       id: [
         "Uji terkendali dengan 30 data per kondisi: rata rata konsentrasi gas naik dari 561 PPM di udara bersih menjadi 1703 PPM saat merokok",
         "Kedua rentang tidak pernah beririsan, sehingga ambang deteksi ditetapkan 1500 PPM",
-        "Klasifikasi berbasis aturan berjalan di perangkat, dengan dashboard web realtime",
+        "Klasifikasi berbasis aturan berjalan di perangkat, dengan dashboard web realtime dan peringatan Telegram ke guru",
         "Ditulis sebagai draf artikel jurnal"
       ]
     },
     stack: ["ESP32", "MQ-135", "Firebase", "JavaScript", "Python"],
-    cover: "mosha-card",
-    coverFit: "contain",
+    cover: "mosha-photo",
+    coverFit: "",
     gallery: [
+      ["mosha-photo", { en: "The Mosha AirQ unit: MQ-135 gas sensor and temperature and humidity sensor in a 3D printed case", id: "Unit Mosha AirQ: sensor gas MQ-135 dan sensor suhu kelembapan dalam casing cetak 3D" }],
+      ["mosha-inside", { en: "Inside: ESP32 wired to the sensor modules", id: "Bagian dalam: ESP32 terhubung ke modul sensor" }],
+      ["mosha-dashboard", { en: "Realtime dashboard for one classroom", id: "Dashboard realtime untuk satu ruang kelas" }],
+      ["mosha-telegram", { en: "Telegram alert sent to teachers (simulator test)", id: "Peringatan Telegram ke guru (uji dengan simulator)" }],
       ["mosha-results", { en: "Clean air vs smoking, 30 readings each", id: "Udara bersih vs merokok, masing masing 30 data" }],
       ["mosha-compare", { en: "Readings during smoking and one hour later", id: "Pembacaan saat merokok dan satu jam setelahnya" }],
       ["mosha-timeline", { en: "Full test timeline with the 1500 PPM detection threshold", id: "Timeline pengujian lengkap dengan ambang deteksi 1500 PPM" }]
