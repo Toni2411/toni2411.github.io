@@ -260,9 +260,11 @@ const PROJECTS = [
       ]
     },
     stack: ["ESP32", "C++", "State Machine", "Firebase", "Chart.js", "Wokwi"],
-    cover: "wwpanel-3d",
-    coverFit: "contain",
+    cover: "wwpanel-photo-front",
+    coverFit: "",
     gallery: [
+      ["wwpanel-photo-front", { en: "The finished panel running a treatment batch (stage: react)", id: "Panel jadi saat menjalankan batch pengolahan (tahap reaksi)" }],
+      ["wwpanel-photo-inside", { en: "Inside the panel: ESP32 board with RTC, 8 channel relay, PSU, MCB and terminal blocks", id: "Isi panel: board ESP32 dengan RTC, relay 8 kanal, PSU, MCB, dan terminal blok" }],
       ["wwpanel-3d", { en: "Panel enclosure, 3D model at 1:1 scale", id: "Enclosure panel, model 3D skala 1:1" }],
       ["wwpanel-front", { en: "Front door: 20x4 LCD, process lamps, E-STOP and key switches", id: "Pintu depan: LCD 20x4, lampu proses, E-STOP, dan sakelar kunci" }],
       ["wwpanel-open", { en: "Inside layout: PSU, 8 channel relay, ESP32, pH module, terminal blocks", id: "Tata letak dalam: PSU, relay 8 kanal, ESP32, modul pH, terminal blok" }],
