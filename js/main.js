@@ -980,6 +980,8 @@ function showSlide(i) {
   const el = $("#galleryImg");
   el.style.animation = "none"; void el.offsetWidth; el.style.animation = "";
   el.src = `assets/img/${img}.webp`;
+  el.onclick = () => window.open(el.src, "_blank", "noopener");
+  el.title = lang === "id" ? "Klik untuk melihat ukuran penuh" : "Click to view full size";
   el.alt = cap[lang];
   $("#galleryCap").textContent = cap[lang];
   $$("#galleryThumbs button").forEach((b, j) => b.classList.toggle("active", j === gIndex));
