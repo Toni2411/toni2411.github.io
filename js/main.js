@@ -307,7 +307,7 @@ const PROJECTS = [
       ["mosha-photo", { en: "The Mosha AirQ unit: MQ-135 gas sensor and temperature and humidity sensor in a 3D printed case", id: "Unit Mosha AirQ: sensor gas MQ-135 dan sensor suhu kelembapan dalam casing cetak 3D" }],
       ["mosha-inside", { en: "Inside: ESP32 wired to the sensor modules", id: "Bagian dalam: ESP32 terhubung ke modul sensor" }],
       ["mosha-dashboard", { en: "Realtime dashboard for one classroom", id: "Dashboard realtime untuk satu ruang kelas" }],
-      ["mosha-telegram", { en: "Telegram alert sent to teachers (simulator test)", id: "Peringatan Telegram ke guru (uji dengan simulator)" }],
+      ["mosha-telegram", { en: "Real smoke alerts from two devices in a classroom, sent to the teachers' Telegram group", id: "Peringatan asap asli dari dua alat di ruang kelas, terkirim ke grup Telegram guru" }],
       ["mosha-results", { en: "Clean air vs smoking, 30 readings each", id: "Udara bersih vs merokok, masing masing 30 data" }],
       ["mosha-compare", { en: "Readings during smoking and one hour later", id: "Pembacaan saat merokok dan satu jam setelahnya" }],
       ["mosha-timeline", { en: "Full test timeline with the 1500 PPM detection threshold", id: "Timeline pengujian lengkap dengan ambang deteksi 1500 PPM" }]
