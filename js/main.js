@@ -191,7 +191,8 @@ const PROJECTS = [
     cover: "guard-card",
     coverFit: "contain",
     gallery: [
-      ["guard-flow", { en: "Guardrails across the three systems", id: "Guardrail pada ketiga sistem" }]
+      ["guard-flow", { en: "Guardrails across the three systems", id: "Guardrail pada ketiga sistem" }],
+      ["guard-eval", { en: "Evaluation results of the RAG chatbot", id: "Hasil evaluasi chatbot RAG" }]
     ],
     links: []
   },
@@ -259,11 +260,15 @@ const PROJECTS = [
       ]
     },
     stack: ["ESP32", "C++", "State Machine", "Firebase", "Chart.js", "Wokwi"],
-    cover: "wwpanel-dash",
-    coverFit: "top",
+    cover: "wwpanel-3d",
+    coverFit: "contain",
     gallery: [
-      ["wwpanel-dash", { en: "Monitoring dashboard, realtime view", id: "Dashboard pemantauan, tampilan realtime" }],
-      ["wwpanel-pfd", { en: "Process the panel controls", id: "Proses yang dikendalikan panel" }]
+      ["wwpanel-3d", { en: "Panel enclosure, 3D model at 1:1 scale", id: "Enclosure panel, model 3D skala 1:1" }],
+      ["wwpanel-front", { en: "Front door: 20x4 LCD, process lamps, E-STOP and key switches", id: "Pintu depan: LCD 20x4, lampu proses, E-STOP, dan sakelar kunci" }],
+      ["wwpanel-open", { en: "Inside layout: PSU, 8 channel relay, ESP32, pH module, terminal blocks", id: "Tata letak dalam: PSU, relay 8 kanal, ESP32, modul pH, terminal blok" }],
+      ["wwpanel-wiring", { en: "Wiring validated in a Wokwi simulation", id: "Pengkabelan diuji di simulasi Wokwi" }],
+      ["wwpanel-dash", { en: "Realtime monitoring dashboard", id: "Dashboard pemantauan realtime" }],
+      ["wwpanel-pfd", { en: "The treatment process the panel controls", id: "Proses pengolahan yang dikendalikan panel" }]
     ],
     links: []
   },
@@ -297,7 +302,9 @@ const PROJECTS = [
     cover: "mosha-card",
     coverFit: "contain",
     gallery: [
-      ["mosha-results", { en: "Clean air vs smoking, 30 readings each", id: "Udara bersih vs merokok, masing masing 30 data" }]
+      ["mosha-results", { en: "Clean air vs smoking, 30 readings each", id: "Udara bersih vs merokok, masing masing 30 data" }],
+      ["mosha-compare", { en: "Readings during smoking and one hour later", id: "Pembacaan saat merokok dan satu jam setelahnya" }],
+      ["mosha-timeline", { en: "Full test timeline with the 1500 PPM detection threshold", id: "Timeline pengujian lengkap dengan ambang deteksi 1500 PPM" }]
     ],
     links: []
   },
@@ -318,20 +325,22 @@ const PROJECTS = [
         "An event is acknowledged only after it is durably stored, and idempotency keys stop duplicates",
         "Each customer gets its own queue, so one slow endpoint never blocks the others",
         "Retries with configurable backoff, a full attempt log, a status API and replay for failed events",
-        "Covered by a pytest suite and a demo running healthy, flaky and down customers side by side"
+        "13 pytest tests passing, plus a demo running healthy, flaky and down customers side by side"
       ],
       id: [
         "Event baru dikonfirmasi setelah tersimpan dengan aman, dan idempotency key mencegah duplikasi",
         "Setiap pelanggan punya antrean sendiri, sehingga satu endpoint lambat tidak menghambat yang lain",
         "Retry dengan backoff yang bisa diatur, log setiap percobaan, API status, dan replay untuk event yang gagal",
-        "Diuji dengan pytest dan demo yang menjalankan pelanggan sehat, tidak stabil, dan mati secara bersamaan"
+        "13 tes pytest lulus, plus demo yang menjalankan pelanggan sehat, tidak stabil, dan mati secara bersamaan"
       ]
     },
     stack: ["Python", "FastAPI", "httpx", "SQLite", "pytest"],
     cover: "webhook-card",
     coverFit: "contain",
     gallery: [
-      ["webhook-flow", { en: "Delivery guarantees, step by step", id: "Jaminan pengiriman, langkah demi langkah" }]
+      ["webhook-flow", { en: "Delivery guarantees, step by step", id: "Jaminan pengiriman, langkah demi langkah" }],
+      ["webhook-run", { en: "Demo run with healthy, flaky and down customers, plus the test suite", id: "Demo dengan pelanggan sehat, tidak stabil, dan mati, plus hasil tes" }],
+      ["webhook-docs", { en: "Interactive API documentation", id: "Dokumentasi API interaktif" }]
     ],
     links: []
   },
